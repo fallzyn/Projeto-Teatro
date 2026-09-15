@@ -2,12 +2,12 @@ import java.io.*;
 import java.util.*;
 
 public class Teatro {
-    private ListaLinear espetaculos;
-    private ListaLinear reservas;
+    private <Espetaculos> espetaculos;
+    private <Reserva> reservas;
 
     public Teatro() {
-        espetaculos = new ListaLinear();
-        reservas = new ListaLinear();
+        espetaculos = new Vetor<>(20);
+        reservas = new Vetor<>(100);
     }
 
     public static void main(String[] args) throws IOException {
@@ -29,6 +29,7 @@ public class Teatro {
             System.out.print("Escolha uma opção: ");
 
             opcao = ent.nextInt();
+            ent.nextLine();
 
             if (opcao == 1) {
                 teatro.carregarEspetaculos();
@@ -42,7 +43,6 @@ public class Teatro {
                 }
             }
 
-         
 
         } while (opcao != 7);
 
@@ -51,21 +51,13 @@ public class Teatro {
     }
 
    public void carregarEspetaculos() throws IOException {
-    FileReader data;
-
-    try {
-      
+        try {
+            FileReader data = new FileReader("espetaculos.txt");
+            data.close();
+            System.out.println("Arquivo de dados carregado com sucesso!");
+        } catch (FileNotFoundException e) {
+            System.out.println("Arquivo de dados não encontrado!");
         }
-
-        data.close();
-        System.out.println("Espetáculos carregados com sucesso!");
-
-    } catch (FileNotFoundException e) {
-        System.out.println("Arquivo de dados não encontrado!");
-        System.exit(0);
     }
 }
-
-  
-        }
 

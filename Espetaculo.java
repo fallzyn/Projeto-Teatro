@@ -34,4 +34,7 @@ public class Espetaculo {
     public double getPreco() {
         return preco;
     }
+    public char [][] getAssentos(){
+        return assentos;
+    }
 }

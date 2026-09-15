@@ -12,4 +12,20 @@ public class Reserva {
         this.qtdIngressos = qtdIngressos;
         this.assentos = assentos;
     }
+    public String getCpf(){
+        return cpf;
+    }
+    public String getNome(){
+        return nome;
+    }
+    public Espetaculo getEspetaculo(){
+        return espetaculo;
+    }
+    public int getQntIngressos(){
+        return qtdIngressos;
+    }
+    public String[] getAssentos(){
+        return assentos;
+    }
+
 }
